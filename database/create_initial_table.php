@@ -53,8 +53,8 @@ class CreateInitialTable extends Migration
      */
     public function down()
     {
-		Schema::drop( 'periods' );
-		Schema::drop( 'seasons' );
+		Schema::dropIfExists( 'periods' );
+		Schema::dropIfExists( 'seasons' );
 		Schema::table( 'users', function( Blueprint $table ) {
 			$table->dropColumn( 'nip' );
 		} );
