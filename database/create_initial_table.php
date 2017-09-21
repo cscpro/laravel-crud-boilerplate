@@ -25,6 +25,7 @@ class CreateInitialTable extends Migration
 			$table->integer( 'year' );
 			$table->boolean( 'is_current' )->default( false );
 			$table->timestamps();
+			$table->softDeletes();
 		} );
 
 		// Create table that has foreign key
@@ -35,6 +36,7 @@ class CreateInitialTable extends Migration
 			$table->string( 'date_from' );
 			$table->string( 'date_to' );
 			$table->timestamps();
+			$table->softDeletes();
 
 			$table->unique( ['season_id', 'role'] );
 			$table->foreign( 'season_id' )
